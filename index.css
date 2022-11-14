@@ -1,3 +1,9 @@
-body {
+/* body {
     background-color: #1d1b1b;
+    color: white;
+} */
+
+#bars {
+    display: flex;
+    justify-content: center;
 }
