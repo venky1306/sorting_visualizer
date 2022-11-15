@@ -31,10 +31,10 @@ function new_arr(){
         document.getElementById("bars").appendChild(div_bars);
         div_bars.classList.add("bars_style");
         if(i&1==1){
-            div_bars.style.backgroundColor = 'red';
+            div_bars.style.backgroundColor = 'blue';
         }
         else{
-            div_bars.style.backgroundColor = 'green';
+            div_bars.style.backgroundColor = 'blue';
         }
         div_bars.style.height = (nums[i]*10+10).toString()+"px";
         div_bars.style.width = "20px";
@@ -43,6 +43,8 @@ function new_arr(){
         
     }
 }
+
+
 
 
 
