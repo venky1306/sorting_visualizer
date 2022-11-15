@@ -17,7 +17,7 @@ let count_of_bars = document.getElementById("bars").childElementCount;
 
 document.getElementById("bubble_sort").addEventListener("click", sort);
 
-function sort(){
+async function sort(){
     let children = document.getElementById("bars").children;
     console.log(typeof(children[2].innerHTML));
     console.log(count_of_bars);
@@ -27,6 +27,7 @@ function sort(){
             children[j].style.background="red";
             children[j+1].style.background="red";
             if (parseInt(children[j].innerHTML) > parseInt(children[j+1].innerHTML)){
+                await new Promise(resolve => setTimeout(() => {resolve(), delay(2)}));
                 swap(children[j], children[j+1]);
                 let temp = children[j].innerHTML;
                 children[j].innerHTML = children[j+1].innerHTML;
