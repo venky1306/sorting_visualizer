@@ -5,6 +5,7 @@ function sleep(ms) {
 document.getElementById("merge_sort").addEventListener("click", sort);
 
 async function sort(){
+    let count_of_bars = document.getElementById("bars").childElementCount;
     mergeSort(0, count_of_bars-1);
 }
 

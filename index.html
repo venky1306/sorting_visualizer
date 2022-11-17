@@ -16,13 +16,14 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
 
-            <span class="navbar-brand mb-0 col-md-5 h1">Sorting Algorithms Visualizer</span>
+            <span class="navbar-brand mb-0 col-md-4 h1">Sorting Algorithms Visualizer</span>
 
-            <div class="collapse navbar-collapse col-md-7 " id="navbarSupportedContent">
+            <div class="collapse navbar-collapse col-md-8 " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-fill w-100">
                     <li class="nav-item">
                         <button type="button" class="btn btn-outline-secondary new array" id="new_array" >New Array</button>
                     </li>
+                    
                     <li class="nav-item">
                         <button type="button" class="btn btn-outline-secondary bubble sort" id="bubble_sort">Bubble sort</button>
                     </li>
@@ -38,11 +39,21 @@
                     <li class="nav-item">
                         <button type="button" class="btn btn-outline-secondary selection sort" id="selection_sort">Section Sort</button>
                     </li>
-              
                 </ul>
             </div>
         </div>
     </nav>
+
+
+    <span>
+        <input id="arr_sz" type="range"  min=20 max=40 step=2 value=30 oninput="rangeValue1.innerText = this.value">
+        <p id="rangeValue1">30</p>
+    </span> 
+
+    <span>
+        <input id="bars_speed" type="range"  min=50 max=150 step=10 value=60 oninput="rangeValue2.innerText = this.value">
+        <p id="rangeValue2">60</p>
+    </span> 
     
     <div id="bars"></div>
     

@@ -5,6 +5,7 @@ function sleep(ms) {
 document.getElementById("insertion_sort").addEventListener("click", sort);
 
 async function sort(){
+    let count_of_bars = document.getElementById("bars").childElementCount;
     let children = document.getElementById("bars").children;
     var i, j, key1, key2;
     // console.log(count_of_bars); -> number of bars to sort

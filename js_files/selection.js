@@ -19,6 +19,7 @@ function sleep(ms) {
 document.getElementById("selection_sort").addEventListener("click", sort);
 
 async function sort(){
+    let count_of_bars = document.getElementById("bars").childElementCount;
     let children = document.getElementById("bars").children;
 
     var i, j, min_idx;

@@ -49,5 +49,6 @@ function qsort(low, high){
 }
 
 function sort(){
+    let count_of_bars = document.getElementById("bars").childElementCount;
     qsort(0,count_of_bars-1);
 }

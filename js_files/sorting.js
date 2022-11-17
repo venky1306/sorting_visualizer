@@ -1,3 +1,5 @@
+
+
 function getRndInteger(max) {
     return Math.floor(Math.random() * (max) ) + 1;
 }
@@ -11,21 +13,29 @@ function deleteChild() {
     }
 }
 
+var arr_size=document.querySelector("#arr_sz"); 
+var no_of_bar=arr_size.value;
+document.getElementById("arr_sz").addEventListener("input", new_arr);
+
 new_arr();
 
 document.getElementById("new_array").addEventListener("click", new_arr);
 
+
 function new_arr(){
+
+    arr_size=document.querySelector("#arr_sz"); 
+    no_of_bar=arr_size.value;
 
     deleteChild();
 
     const nums = [];
     let max = 50
-    for( let i=0;i<25;i++){
+    for( let i=0;i<no_of_bar;i++){
         nums[i] = getRndInteger(max);
     }
 
-    for(let i=0;i<25;i++){
+    for(let i=0;i<no_of_bar;i++){
         var div_bars = document.createElement('div');
         div_bars.innerText = nums[i];
         document.getElementById("bars").appendChild(div_bars);
