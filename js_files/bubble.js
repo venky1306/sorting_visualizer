@@ -19,10 +19,22 @@ function sleep(ms) {
 
 document.getElementById("bubble_sort").addEventListener("click", sort);
 
-async function sort(){
+function sort(){
+    sort1();
+    stoping_var = false;
+}
 
-    let arr_size=document.querySelector("#bars_speed"); 
-    let no_of_bar=arr_size.value;
+
+async function sort1(){
+    document.getElementById("insertion_sort").disabled = true;
+    document.getElementById("merge_sort").disabled = true;
+    document.getElementById("quick_sort").disabled = true;
+    document.getElementById("selection_sort").disabled = true;
+    document.getElementById("bubble_sort").disabled = true;
+    document.getElementById("new_array").disabled = true;
+    document.getElementById("arr_sz").disabled = true;
+    
+
     let count_of_bars = document.getElementById("bars").childElementCount;
     let children = document.getElementById("bars").children;
     var i, j;
@@ -31,7 +43,10 @@ async function sort(){
             children[j].style.background="red";
             children[j+1].style.background="red";
             if (parseInt(children[j].innerHTML) > parseInt(children[j+1].innerHTML)){
-                await sleep(no_of_bar);
+                let arr_size=document.querySelector("#bars_speed"); 
+                let no_of_bar=arr_size.value;
+                if(stoping_var) return;
+                await sleep(170-no_of_bar);
                 swap(children[j], children[j+1]);
                 let temp = children[j].innerHTML;
                 children[j].innerHTML = children[j+1].innerHTML;
@@ -43,4 +58,15 @@ async function sort(){
         children[count_of_bars-1-i].style.background = "green";
     }
     children[0].style.background = "green";
+
+    document.getElementById("insertion_sort").removeAttribute('disabled');
+    document.getElementById("merge_sort").removeAttribute('disabled');
+    document.getElementById("quick_sort").removeAttribute('disabled');
+    document.getElementById("selection_sort").removeAttribute('disabled');
+    document.getElementById("bubble_sort").removeAttribute('disabled');
+    document.getElementById("new_array").removeAttribute('disabled');
+    document.getElementById("arr_sz").removeAttribute('disabled');
+    
+    
+
 }

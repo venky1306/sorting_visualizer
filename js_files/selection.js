@@ -19,6 +19,16 @@ function sleep(ms) {
 document.getElementById("selection_sort").addEventListener("click", sort);
 
 async function sort(){
+
+    document.getElementById("insertion_sort").disabled = true;
+    document.getElementById("merge_sort").disabled = true;
+    document.getElementById("quick_sort").disabled = true;
+    document.getElementById("selection_sort").disabled = true;
+    document.getElementById("bubble_sort").disabled = true;
+    document.getElementById("new_array").disabled = true;
+    document.getElementById("arr_sz").disabled = true;
+    
+
     let count_of_bars = document.getElementById("bars").childElementCount;
     let children = document.getElementById("bars").children;
 
@@ -37,5 +47,13 @@ async function sort(){
         children[i].innerHTML = children[min_idx].innerHTML;
         children[min_idx].innerHTML = temp;
     }
+
+    document.getElementById("insertion_sort").removeAttribute('disabled');
+    document.getElementById("merge_sort").removeAttribute('disabled');
+    document.getElementById("quick_sort").removeAttribute('disabled');
+    document.getElementById("selection_sort").removeAttribute('disabled');
+    document.getElementById("bubble_sort").removeAttribute('disabled');
+    document.getElementById("new_array").removeAttribute('disabled');
+    document.getElementById("arr_sz").removeAttribute('disabled');
 
 }

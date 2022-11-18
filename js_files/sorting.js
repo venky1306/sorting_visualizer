@@ -1,4 +1,4 @@
-
+var stoping_var = false;
 
 function getRndInteger(max) {
     return Math.floor(Math.random() * (max) ) + 1;
@@ -20,6 +20,13 @@ document.getElementById("arr_sz").addEventListener("input", new_arr);
 new_arr();
 
 document.getElementById("new_array").addEventListener("click", new_arr);
+
+document.getElementById("stop_button").addEventListener("click", stop_fun);
+
+function stop_fun(){
+    stoping_var = true;
+    document.getElementById("new_array").removeAttribute('disabled');
+}
 
 
 function new_arr(){
@@ -49,9 +56,15 @@ function new_arr(){
         div_bars.style.height = (nums[i]*10+10).toString()+"px";
         div_bars.style.width = "20px";
         div_bars.style.margin = "2px";
-        
-        
     }
+
+    document.getElementById("insertion_sort").removeAttribute('disabled');
+    document.getElementById("merge_sort").removeAttribute('disabled');
+    document.getElementById("quick_sort").removeAttribute('disabled');
+    document.getElementById("selection_sort").removeAttribute('disabled');
+    document.getElementById("bubble_sort").removeAttribute('disabled');
+    document.getElementById("arr_sz").removeAttribute('disabled');
+    
 }
 
 
