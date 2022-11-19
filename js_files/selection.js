@@ -18,7 +18,12 @@ function sleep(ms) {
 
 document.getElementById("selection_sort").addEventListener("click", sort);
 
-async function sort(){
+function sort(){
+    sort1();
+    stoping_var = false;
+}
+
+async function sort1(){
 
     document.getElementById("insertion_sort").disabled = true;
     document.getElementById("merge_sort").disabled = true;
@@ -39,6 +44,7 @@ async function sort(){
         // Find the minimum element in unsorted array
         min_idx = i;
         children[i].style.background="red";
+        if(stoping_var) return;
         await sleep(160-no_of_bar);
         for (j = i + 1; j < count_of_bars; j++){
             children[j].style.background="red";
@@ -47,17 +53,22 @@ async function sort(){
                 if(min_idx!=i)
                     children[min_idx].style.background="blue";
                 children[j].style.background="red";
+                no_of_bar=document.querySelector("#bars_speed").value;
+                if(stoping_var) return;
                 await sleep(160-no_of_bar);
                 min_idx = j;
             }
             else{
+                no_of_bar=document.querySelector("#bars_speed").value;
+                if(stoping_var) return;
                 await sleep(200-no_of_bar);
                 children[j].style.background="blue";
             }
                 
         }
         // Swap the found minimum element with the first element
-
+        no_of_bar=document.querySelector("#bars_speed").value;
+        if(stoping_var) return;
         await sleep(160-no_of_bar);
         swap(children[min_idx], children[i]);
         let temp = children[i].innerHTML;

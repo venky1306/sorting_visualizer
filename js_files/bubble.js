@@ -21,7 +21,10 @@ document.getElementById("bubble_sort").addEventListener("click", sort);
 
 function sort(){
     sort1();
+    // not changing the global value
+    console.log(stoping_var);
     stoping_var = false;
+    console.log(stoping_var);
 }
 
 

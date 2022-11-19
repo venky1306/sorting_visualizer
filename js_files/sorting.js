@@ -64,6 +64,8 @@ function new_arr(){
     document.getElementById("selection_sort").removeAttribute('disabled');
     document.getElementById("bubble_sort").removeAttribute('disabled');
     document.getElementById("arr_sz").removeAttribute('disabled');
+
+    stoping_var= false;
     
 }
 
