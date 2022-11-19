@@ -35,30 +35,38 @@ async function sort(){
     var i, j, min_idx;
     for (i = 0; i < count_of_bars-1; i++)
     {
-        let arr_size=document.querySelector("#bars_speed"); 
-        let no_of_bar=arr_size.value;
+        let no_of_bar=document.querySelector("#bars_speed").value;
         // Find the minimum element in unsorted array
         min_idx = i;
         children[i].style.background="red";
+        await sleep(160-no_of_bar);
         for (j = i + 1; j < count_of_bars; j++){
             children[j].style.background="red";
+            await sleep(160-no_of_bar);
             if (parseInt(children[j].innerHTML) < parseInt(children[min_idx].innerHTML)){
-                children[min_idx].style.background="blue";
+                if(min_idx!=i)
+                    children[min_idx].style.background="blue";
                 children[j].style.background="red";
-                await sleep(200-no_of_bar);
+                await sleep(160-no_of_bar);
                 min_idx = j;
             }
-            else
+            else{
+                await sleep(200-no_of_bar);
                 children[j].style.background="blue";
+            }
+                
         }
         // Swap the found minimum element with the first element
-        
-        await sleep(200-no_of_bar);
+
+        await sleep(160-no_of_bar);
         swap(children[min_idx], children[i]);
-        children[i].style.background="green";
         let temp = children[i].innerHTML;
         children[i].innerHTML = children[min_idx].innerHTML;
         children[min_idx].innerHTML = temp;
+        
+        children[min_idx].style.background="blue";
+        children[i].style.background="green";
+        
     }
     children[i].style.background="green";
 
