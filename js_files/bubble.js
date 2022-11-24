@@ -41,26 +41,48 @@ async function sort1(){
     let count_of_bars = document.getElementById("bars").childElementCount;
     let children = document.getElementById("bars").children;
     var i, j;
-    for (i = 0; i < count_of_bars-1; i++){
-        for (j = 0; j < count_of_bars-i-1; j++){
-            children[j].style.background="red";
-            children[j+1].style.background="red";
-            if (parseInt(children[j].innerHTML) > parseInt(children[j+1].innerHTML)){
-                let arr_size=document.querySelector("#bars_speed"); 
-                let no_of_bar=arr_size.value;
-                if(stoping_var) return;
-                await sleep(170-no_of_bar);
+
+    for(var i = 1; i < count_of_bars; ++i)     
+    {   
+        for(var j = 0; j <= (count_of_bars - i - 1); ++j)  
+        {   
+            if(parseInt(children[j].innerHTML) > parseInt(children[j+1].innerHTML)){
+                // var temm = arr[j];
+                // arr[j] = arr[j + 1];
+                // arr[j+1] = temm;
+
                 swap(children[j], children[j+1]);
                 let temp = children[j].innerHTML;
                 children[j].innerHTML = children[j+1].innerHTML;
                 children[j+1].innerHTML = temp;
-            }
-            children[j].style.background="blue";
-            children[j+1].style.background="blue";
+             }
         }
-        children[count_of_bars-1-i].style.background = "green";
     }
-    children[0].style.background = "green";
+    children[count_of_bars-1].style.background = "green";
+
+
+
+
+    // for (i = 0; i < count_of_bars-1; i++){
+    //     for (j = 0; j < count_of_bars-i-1; j++){
+    //         children[j].style.background="red";
+    //         children[j+1].style.background="red";
+    //         if (parseInt(children[j].innerHTML) > parseInt(children[j+1].innerHTML)){
+    //             let arr_size=document.querySelector("#bars_speed"); 
+    //             let no_of_bar=arr_size.value;
+    //             if(stoping_var) return;
+    //             await sleep(170-no_of_bar);
+    //             swap(children[j], children[j+1]);
+    //             let temp = children[j].innerHTML;
+    //             children[j].innerHTML = children[j+1].innerHTML;
+    //             children[j+1].innerHTML = temp;
+    //         }
+    //         children[j].style.background="blue";
+    //         children[j+1].style.background="blue";
+    //     }
+    //     children[count_of_bars-1-i].style.background = "green";
+    // }
+    // children[0].style.background = "green";
 
     document.getElementById("insertion_sort").removeAttribute('disabled');
     document.getElementById("merge_sort").removeAttribute('disabled');
