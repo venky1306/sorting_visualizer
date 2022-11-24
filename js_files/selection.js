@@ -19,11 +19,11 @@ function sleep(ms) {
 document.getElementById("selection_sort").addEventListener("click", sort);
 
 function sort(){
-    sort1();
+    selection_sort_fun();
     stoping_var = false;
 }
 
-async function sort1(){
+async function selection_sort_fun(){
 
     document.getElementById("insertion_sort").disabled = true;
     document.getElementById("merge_sort").disabled = true;
